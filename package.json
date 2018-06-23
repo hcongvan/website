@@ -1,0 +1,25 @@
+{
+  "name": "webtrade",
+  "version": "0.0.1",
+  "description": "test trade website",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "passport": "^0.4.0",
+    "passport-openid": "^0.4.0",
+    "steam-tradeoffer-manager": "^2.6.1",
+    "steam-user": "^3.17.0",
+    "steamcommunity": "^3.30.5",
+    "winston": "^2.3.1",
+	"mongoose": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+	"start": "node index.js",
+    "test": "node test.js"
+  },
+  "author": "tblack",
+  "license": "ISC"
+}

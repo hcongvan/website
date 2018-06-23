@@ -1,0 +1,52 @@
+
+
+img.sticky{
+	position: -webkit-sticky;
+    position: sticky;
+	top:0;
+	width:100%;
+}
+
+.menu_bar{
+	position:fixed;
+	width:100%; 
+	height:auto ; 
+	top:0px; 
+	left:0px; 
+	margin:0px; 
+	padding:0px;
+	border:10px solid transparent; 
+}
+.menu_bar img{
+	width:100%; 
+	height:auto
+}
+.menu_bar span{
+	color: blue;
+}
+.name_frame {
+	position:absolute;
+	color: white;
+	left:0px;
+	top:20px;
+}
+.name_frame a:visited{
+	color:white;
+	text-decoration:none;
+}
+.signin_icon{
+	position:absolute;
+	width:100px; 
+	height:50px;  
+	right:30px; 
+	padding:0px;
+	margin:0px; 
+	top:15px 	
+}
+
+.signin_icon input{
+	width:100%; 
+	height:auto;
+	border-radius :10px;
+}
+
