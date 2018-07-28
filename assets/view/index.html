@@ -14,13 +14,9 @@
     <link rel="stylesheet" href="assets/css/main.css">
 	<link href="assets/css/slideshow-container.css" rel="stylesheet">
 	<link href="assets/css/item_frame.css" rel="stylesheet">
+	<link href="assets/css/trade_area.css" rel="stylesheet">
 	<style>
-img.sticky{
-	position: -webkit-sticky;
-    position: sticky;
-	top:0;
-	width:100%;
-}
+
 </style>
 	
 </head>
@@ -33,6 +29,7 @@ img.sticky{
 		<div class="stage_box">Stage 3</div>
 		<div class="stage_box">Stage 4</div>
 		<div class="stage_box">Stage 5</div>
+		<span class="close cursor" onclick="closeModal()">&times;</span>
 	</div>
 </div>
 
@@ -51,85 +48,58 @@ img.sticky{
 		</div>
 	</div>
 	
-	<!-- Slideshow container -->
-<div class="slideshow-container">
-
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <img src="assets/images/resize2.png" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="assets/images/slide_container3.png" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <img src="assets/images/slide_container2.png" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- Slideshow container -->
-	
-	<div id="trade_section" style="width:100%; height:auto; position:relative">
-		<img class="sticky" src="assets/images/resize2.png">
-		
-		<div id="left_side" style="width:40%; height:55%; border-radius:15px; position:absolute; top:10%; left:0px;  ">
-			<div class="font-color--white font-size--30 font-weight--light">Your Items</div>
-                        <div id="trade_area_user"class="trade-area__items-area margin-top" style=" height:50%; overflow-y:scroll ">
-							<div class="squad-wrapper" style=" left:0px; height:92% ">
-                                <div class="squad-wrapper__list" style="height:100% ">
-									<div class="item-card item-card--add-item" style="height:100%" >
-										<img src="assets/images/add_icon.png">
-										<div class="font-color--white font-transform--uppercase">Choose items</div>
-										<div class="font-color--white line-height--20">Add your items from the inventory below</div>
-									</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="trade-area__balance margin-top line-height--20">
-                            <div class="font-color-grey margin-bot--10px">Balance: <span class="font-color--white">$15.00</span></div>
-                            <div class="font-color--blue font-size--30">+ $<span>5.50</span></div>
-                        </div>
+	<div class="guide_area">
+		<div class="book front">
+		<div class="book_text">
+			Guidance list:
+		</div>
+			<img src="assets/images/blue_dota.png" class="img_book" style="border-radius:10px;">
 		</div>
 		
-		<div id="right_side" style="width:40%; height:55%; border-radius:15px; position:absolute; top:10%; right:0px; z-index: 1">
+		<!-- <div class="book left">
+			<img src="assets/images/item_4.png" class="img_book">
+		</div>
+		
+		<div class="book right">
+			<img src="assets/images/item_5.png" class="img_book">
+		</div> -->
+	</div>
+	
+	<div id="trade_section" style="width:100%; height:500px; position:relative; background-image: url('../../assets/images/slide_container3.png')">
+		<div class="ashes1" ></div>
+		<div class="ashes2" ></div>
+		<div class="ashes3" ></div>
+		<div id="left_side" >
+			<div class="font-color--white font-size--30 font-weight--light">Your Items</div>
+			<div id="trade_area_user"class="trade_frame" >
+				
+			</div>
+			<div class="trade-area__balance margin-top line-height--20">
+				<div class="balance_style right0">Right: $<span id="user_balance" class="font-color--white">0.00</span></div>
+			</div>
+		</div>
+		
+		<div id="right_side" >
 			<div class="font-color--white font-size--30 font-weight--light">Bot's Items</div>
-                        <div id="trade_area_bot" class="trade-area__items-area margin-top" style="height:50%; overflow-y:scroll">
-                            <div class="squad-wrapper" style=" left:0px; height:92%">
-                                <div class="squad-wrapper__list" style="height:100%">
-									<div class="item-card item-card--add-item" style="height:100%">
-										<img src="assets/images/add_icon.png">
-										<div class="font-color--white font-transform--uppercase">Choose items</div>
-										<div class="font-color--white line-height--20">Add your items from the inventory below</div>
-									</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="trade-area__balance margin-top line-height--20">
-                            <div class="font-color-grey margin-bot--10px">Left: <span class="font-color--white">$15.00</span></div>
-                            <div class="font-color--blue font-size--30">+ $<span>5.50</span></div>
-                        </div>
+			<div id="trade_area_bot" class="trade_frame" >
+			   
+			</div>
+			<div class="trade-area__balance margin-top line-height--20">
+				<div class="balance_style left0">Left: $<span id="bot_balance" class="font-color--white">0.00</span></div>
+			</div>
 		</div>
 
 		<div class="col-md-12 no-padding text-center" style="width:100%; height:20%; position:absolute; top:75%">
-                        <button class="btn button button--blue margin-bot--10px" id="trade-btn" style="width:10%" >
-						<a href="./checkStatus" onclick="Confirmation()">Trade</a>
-						</button>
+                        <p class="btn button button--blue margin-bot--10px"  style="width:10%" id="trade-btn" onclick="Confirmation()">
+						Trade
+						</p>
                         <br>
                         <button class="btn button button--transparent" style="width:10%">Auto Select</button>
         </div>
 	</div>
 	
-<div id="add_item_section" class="row margin-top margin-bot inventory-area" style="width:100%">
-	<div class="col-md-6">
+<div id="add_item_section" >
+	<div class="add_item_left">
 		<ul class="nav nav-tabs inventory-area__tab-list" role="tablist">
 			<li class="nav-item inventory-area__tab-control">
 				<a class="nav-link active inventory-area__tab-link" id="your-csgo-tab" data-toggle="tab" href="#your-csgo" role="tab" aria-controls="csgo" aria-selected="true">
@@ -144,22 +114,39 @@ img.sticky{
 		</ul>
 
 		<div class="tab-content">
-			<div class="tab-pane active" id="your-csgo" role="tabpanel">
-				<div class="inventory-wrapper">
-					<div id="choose_item_area" class="inventory-wrapper__list">
+			<div class=" active item_storage" id="your-csgo" role="tabpanel">
 
-					</div>
-				</div>
 			</div>
-			<div class="tab-pane" id="your-dota" role="tabpanel">
-				<div class="inventory-wrapper">
-					<div class="inventory-wrapper__list">
-					</div>
-				</div>
+			<div class="" id="your-dota" role="tabpanel">
+				
 			</div>
 		</div>
 	</div>
-	<div class="col-md-6">
+	
+	<div class="add_item_filter">
+		<input type="text" id="SearchInput" placeholder="Search for names..">
+		
+		<div class="radio_filter">
+			<p class="Radio_KeyWord">shotgun</p>
+			<div class="radio">
+				<div class="radio_cover">
+				</div>
+			</div>
+		</div>
+		
+		<div class="radio_filter">
+			<p class="Radio_KeyWord">Base grade</p>
+			<div class="radio">
+				<div class="radio_cover">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	<div class="add_item_right">
 		<ul class="nav nav-tabs inventory-area__tab-list" role="tablist">
 			<li class="nav-item inventory-area__tab-control">
 				<a class="nav-link active inventory-area__tab-link" id="bot-csgo-tab" data-toggle="tab" href="#bot-csgo" role="tab" aria-controls="csgo" aria-selected="true">
@@ -174,17 +161,11 @@ img.sticky{
 		</ul>
 
 		<div class="tab-content" id="bot_area" bot=1 steamid="76561198366407443" >
-			<div class="tab-pane active" id="bot-csgo" role="tabpanel" >
-				<div class="inventory-wrapper">
-					<div class="inventory-wrapper__list">
-					</div>
-				</div>
+			<div class="tab-pane active item_storage" id="bot-csgo" role="tabpanel" >
+
 			</div>
 			<div class="tab-pane" id="bot-dota" role="tabpanel">
-				<div class="inventory-wrapper">
-					<div class="inventory-wrapper__list">
-					</div>
-				</div>
+		
 			</div>
 		</div>
 	</div>
@@ -195,7 +176,9 @@ function Confirmation() {
   document.getElementById('confirm_box').style.display = "block";
 }
 
-
+function closeModal(){
+	document.getElementById('confirm_box').style.display = "none";
+}
 </script>
 <!--jQuery-->
 <script src="assets/js/jquery-3.2.1.min.js"></script>

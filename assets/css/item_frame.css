@@ -1,10 +1,32 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 60); 
+    border-radius: 10px;
+}
 
 .item_frame{
-	width: 120px;
-	height: 120px;
+	width: 90px;
+	height: 90px;
 	background-color: black;
-	margin: 10px;
+	margin: 5px;
+	float:left;
+	border-radius: 10px;
+	border: 3px solid DodgerBlue;
+}
+
+#tag_container{
+	display: none;
 }
 
 .item_frame_quantity{
@@ -12,39 +34,67 @@
 	width:100%;
 	height:20%;
 	color: white;
-	font-size: 15px;
-	top: -10%;
-	left: 0%;
+	font-size: 12px;
+	top: -13%;
+	left: 5%;
 	margin-left:5px;
 }
 
 .item_frame_rarity{
 	position:relative;
-	font-size: 15px;
+	font-size: 12px;
 	width:95%;
 	height:20%;
 	color:green;
-	top: -30%;
+	top: -33%;
 	text-align:right;
 
-}
-
-.item_frame_image{
-	position:relative;
-	width:80%;
-	height:auto;
-	top:-20px;
-	left:10%;
 }
 
 .item_frame_price{
 	position:relative;
 	width: 100%;
 	height: 20%;
-	font-size: 20px;
-	top: -20%;
+	font-size: 15px;
+	top: -33%;
 	text-align: center;
 	color:white;
+}
+
+
+#add_item_section{
+	width:100%;
+	height:auto;
+	position:relative;
+}
+
+.add_item_left{
+	width: 40%;
+	position:absolute;
+	left:0%;
+}
+
+.add_item_filter{
+	width:18%;
+	position:absolute;
+	left:41%;
+	height:700px;
+	background-color: #FF9933;
+	top:20%;
+}
+
+.add_item_right{
+	width: 40%;
+	position:absolute;
+	right:0%;
+}
+
+.item_frame_image{
+	position:relative;
+	width:80%;
+	height:auto;
+	top:-17px;
+	left:10%;
 }
 
 .item_frame_dropdown{
@@ -57,15 +107,42 @@
 	color: white;
 	display: none;
 	text-align:center;
+	z-index: 3;
+	overflow: visible;
+	opacity: 0.8;
+	border-radius:15px;
 }
 
-.item_frame:hover .item_frame_dropdown{
+.balance_style{
+	position:absolute;
+	font-size: 20px;
+	color:white;
+	top:130%;
+}
+
+.right0{
+	right:0%;
+}
+
+.left0{
+	left:0%;
+}
+
+.item_frame:hover {
+	width:100px;
+	height:100px;
+	box-shadow: 5px 5px yellow;
+}
+
+/* .item_frame:hover .item_frame_dropdown{
 display: block;
-z-index: 3;
-overflow: visible;
+z-index:5;
+overflow:visible;
+} */
+
+#trade_area_user .item_frame{
+	float:left;
 }
-
-
 
 .light_box{
 	position:fixed;
@@ -84,7 +161,7 @@ overflow: visible;
 
 .box_content{
 	position:relative;
-	background-color: LightGrey;
+	background-color: Grey;
 	width: 60%;
 	height:70%;
 	margin:auto;
@@ -93,31 +170,83 @@ overflow: visible;
 
 .stage_box{
 	display: inline-block;
-	width:15%;
-	height:40%;
+	width:100px;
+	height:100px;
     color: white;
     text-align: center;
     padding: auto;
-	margin-top:10%;
-	margin-left:auto;
+	margin:15px;
     text-decoration: none;
 	background-color: black;
+	border-radius: 50%;
+	border: 10px solid LightGrey;
+	border-top: 10px solid rgb(255, 255, 90);
+	animation: loadcircle 1s linear infinite;
 }
 
-.user_icon{
+@keyframes loadcircle{
+	 0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.user_img{
 position:absolute;
 width: 50px;
 height:auto;
 top:10px;
-right:100px;
+right:20px;
 border: 2px solid DodgerBlue;
 }
 
 .user_name{
 	position:absolute;
-	top:10px;
-	right:30px;
+	height:auto;
+	top:0px;
+	right:100px;
 	color: white;
+	padding:0px;
+	margin:0px;
+	border: 2px solid red;
+}
+
+.dropdown_area{
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:10px;
+	right:-10px;
+	z-index:2;
+	border: 2px solid blue;
+}
+
+.dropdown_menu{
+	width:150px;
+	height:200px;
+	position:absolute;
+	top:40px;
+	right:80px;
+	display: none;
+	background-color:Grey;
+}
+
+.dropdown_menu ul li{
+	list-style-type:none;
+}
+
+.dropdown_menu ul li:hover{
+	color:white;
+}
+
+/* .dropdown_area:hover .dropdown_menu{
+	display:block;
+} */
+
+a.user_name:visited{
+	color:white;
 }
 
 .user_icon_logout{
@@ -146,4 +275,40 @@ color:white;
 	border:10px solid transparent; 
 	border-image: url('../../assets/images/menu_border2.png') 20 round;
 
+}
+
+.trade_frame{
+	position:relative;
+	top: 10%;
+	height:100%;
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 10px;
+	overflow-y:auto;
+}
+
+.item_storage {
+	height: 700px;
+	width: 100%;
+	overflow-y: auto;
+}
+
+.close{
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
 }
