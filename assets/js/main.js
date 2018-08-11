@@ -81,9 +81,9 @@ $(document).ready(function () {
 		console.log(JSON.stringify(data));
 	}); */
 	
-	$("#trade-btn").click(function(){
-		$.get("/checkStatus");
-	});
+	// $("#trade-btn").click(function(){
+	// 	$.get("/checkStatus");
+	// });
 });
 
 function getData(id,appid,items,flag){
