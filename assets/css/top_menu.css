@@ -1,0 +1,207 @@
+body{
+	overflow-x:hidden;
+}
+
+#menu_bar{
+	width:100%; 
+	height:auto ; 
+	position:relative; 
+	top:0px; 
+	left:0px; 
+	margin:0px; 
+	padding:0px; 
+	border:10px solid transparent; 
+	border-image: url('../../assets/images/menu_border2.png') 20 round;
+
+}
+
+.page_name{
+	color: #fff;
+	position:absolute; 
+	left:0px; 
+	top:0%;
+	width:30%;
+}
+
+
+.page_name_span1 li{
+	list-style-type:none;
+	float:left;
+	font-size:200%;
+	color:white;
+	text-shadow:none;
+	animation: text_animate1 2s linear infinite;
+}
+.page_name_span2 li{
+	list-style-type:none;
+	float:left;
+	font-size:200%;
+	color:white;
+	text-shadow:none;
+	animation: text_animate2 2s linear infinite;
+}
+
+@keyframes text_animate1
+{
+	0%
+	{
+		color: #FD0E35;
+		text-shadow:none;
+
+	}
+	50%
+	{
+		color:#FD0E35;
+		text-shadow:0 0 15px #FD0E35, 0 0 20px #ff6c00;
+	}
+	100%
+	{
+		color:#FD0E35;
+		text-shadow:none;
+	}
+}
+
+@keyframes text_animate2
+{
+	0%
+	{
+		color: #FFFF66;
+		text-shadow:none;
+
+	}
+	50%
+	{
+		color:#FFFF66;
+		text-shadow:0 0 7px #fff900, 0 0 20px #ff6c00;
+	}
+	100%
+	{
+		color:#FFFF66;
+		text-shadow:none;
+	}
+}
+.page_name_span1 li:nth-child(1)
+{
+	animation-delay:0s;
+}
+.page_name_span1 li:nth-child(2)
+{
+	animation-delay:0.4s;
+}
+.page_name_span1 li:nth-child(3)
+{
+	animation-delay:0.8s;
+}
+.page_name_span1 li:nth-child(4)
+{
+	animation-delay:1.2s;
+}
+.page_name_span1 li:nth-child(5)
+{
+	animation-delay:1.6s;
+}
+
+.page_name_span2 li:nth-child(1)
+{
+	animation-delay:1.6s;
+}
+.page_name_span2 li:nth-child(2)
+{
+	animation-delay:2s;
+}
+.page_name_span2 li:nth-child(3)
+{
+	animation-delay:2.4s;
+}
+.page_name_span2 li:nth-child(4)
+{
+	animation-delay:2.8s;
+}
+.page_name_span2 li:nth-child(5)
+{
+	animation-delay:3.2s;
+}
+.page_name_span2 li:nth-child(6)
+{
+	animation-delay:3.6s;
+}
+.page_name_span2 li:nth-child(7)
+{
+	animation-delay:4s;
+}
+.page_name_span2 li:nth-child(8)
+{
+	animation-delay:4.4s;
+}
+.page_name_span2 li:nth-child(9)
+{
+	animation-delay:4.8s;
+}
+
+.login_logo{
+	position:absolute; 
+	right:30px; 
+	padding:0px;
+	margin:0px; 
+	top:15px 
+}
+
+.user_img{
+position:absolute;
+width: 50px;
+height:auto;
+top:10px;
+right:20px;
+border: 2px solid DodgerBlue;
+}
+
+.dropdown_area{
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:10px;
+	right:-10px;
+	z-index:2;
+	border: 2px solid blue;
+}
+
+.user_name{
+	position:absolute;
+	height:auto;
+	top:0px;
+	right:100px;
+	color: white;
+	padding:0px;
+	margin:0px;
+	border: 2px solid red;
+}
+
+.user_icon_logout{
+position:absolute;
+top:40px;
+right:30px;
+color:white;
+}
+
+a.user_name:visited{
+	color:white;
+}
+
+
+.dropdown_menu{
+	width:150px;
+	height:200px;
+	position:absolute;
+	top:40px;
+	right:80px;
+	display: none;
+	background-color:Grey;
+}
+
+.dropdown_menu ul li{
+	list-style-type:none;
+}
+
+.dropdown_menu ul li:hover{
+	color:white;
+}
