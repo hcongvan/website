@@ -9,19 +9,23 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="assets/css/open-iconic-bootstrap.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
-	<link href="assets/css/slideshow-container.css" rel="stylesheet">
-	<link href="assets/css/item_frame.css" rel="stylesheet">
-	<link href="assets/css/trade_area.css" rel="stylesheet">
+    <link href="../../assets/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../assets/css/main.css" rel="stylesheet" >
+	<link href="../../assets/css/slideshow-container.css" rel="stylesheet">
+	<link href="../../assets/css/item_frame.css" rel="stylesheet">
+	<link href="../../assets/css/choose_area.css" rel="stylesheet">
+	<link href="../../assets/css/confirm_window.css" rel="stylesheet">
+	<link href="../../assets/css/guide_area.css" rel="stylesheet">
+	<link href="../../assets/css/trade_area.css" rel="stylesheet">
+	<link href="../../assets/css/top_menu.css" rel="stylesheet">
 	<style>
 
 </style>
 	
 </head>
 <body>
-
+<!-- Confirm box area -->
 <div id="confirm_box" class="light_box">
 	<div class="box_content">
 		<div class="stage_box">Stage 1</div>
@@ -32,12 +36,33 @@
 		<span class="close cursor" onclick="closeModal()">&times;</span>
 	</div>
 </div>
+<!-- Confirm box area -->
 
-	<div id="menu_bar" >
-		<img src="assets/images/menu2.png" style="width:100%; height:auto">
+<!-- Top menu area -->
+	<div class="guide_area" >
+		<!-- <img src="../../assets/images/menu2.png" style="width:100%; height:auto"> -->
 		
-		<div class="text-center font-color--white font-size--16 font-transform--uppercase" style="position:absolute; left:0px; top:20%">
-                <a href=""><span class="font-color--blue">Trade</span>WithMe.GG</a>
+		<div class="page_name" >
+            <a href="">
+				<ul class="page_name_span1">
+					<li>T</li>
+					<li>r</li>
+					<li>a</li>
+					<li>d</li>
+					<li>e</li>
+				</ul>
+				<ul class="page_name_span2">
+					<li>W</li>
+					<li>i</li>
+					<li>t</li>
+					<li>h</li>
+					<li>M</li>
+					<li>e</li>
+					<li>.</li>
+					<li>G</li>
+					<li>G</li>
+				</ul>
+			</a>
 		</div>
 		
 		<div class="login_logo">
@@ -46,15 +71,17 @@
 					<input id="submit_button" name="submit" type="image" src="http://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_01.png"alt="Sign in through Steam" />
 			</form>
 		</div>
-	</div>
 	
-	<div class="guide_area">
-		<div class="book front">
+<!-- Top menu area -->
+
+<!-- Guidance/info area -->	
+	
+		<!-- <div class="book front">
 		<div class="book_text">
 			Guidance list:
 		</div>
-			<img src="assets/images/blue_dota.png" class="img_book" style="border-radius:10px;">
-		</div>
+			<img src="../../assets/images/blue_dota.png" class="img_book">
+		</div> -->
 		
 		<!-- <div class="book left">
 			<img src="assets/images/item_4.png" class="img_book">
@@ -63,69 +90,105 @@
 		<div class="book right">
 			<img src="assets/images/item_5.png" class="img_book">
 		</div> -->
-	</div>
-	
-	<div id="trade_section" style="width:100%; height:500px; position:relative; background-image: url('../../assets/images/slide_container3.png')">
-		<div class="ashes1" ></div>
+	<!-- </div> -->
+<!-- Guidance/info area -->	
+
+<!-- Trade area -->		
+	<!-- <div id="trade_section"> -->
+	<!-- 	<div class="ashes1" ></div>
 		<div class="ashes2" ></div>
-		<div class="ashes3" ></div>
+		<div class="ashes3" ></div> -->
 		<div id="left_side" >
-			<div class="font-color--white font-size--30 font-weight--light">Your Items</div>
+			<div class="trade_item_text">Your Items</div>
 			<div id="trade_area_user"class="trade_frame" >
-				
+				<div class="blur_background" style="background-image: linear-gradient(to bottom right, #50BFE6, #AAF0D1)">
+				</div>
 			</div>
-			<div class="trade-area__balance margin-top line-height--20">
-				<div class="balance_style right0">Right: $<span id="user_balance" class="font-color--white">0.00</span></div>
+			<div class="balance_text">
+				<div class="balance_style right0">Right: $<span id="user_balance" >0.00</span></div>
 			</div>
 		</div>
 		
 		<div id="right_side" >
-			<div class="font-color--white font-size--30 font-weight--light">Bot's Items</div>
+			<div class="trade_item_text">Bot's Items</div>
 			<div id="trade_area_bot" class="trade_frame" >
-			   
+				<div class="blur_background" style="background-image: linear-gradient(to bottom right, red, yellow)">
+				</div>
 			</div>
-			<div class="trade-area__balance margin-top line-height--20">
-				<div class="balance_style left0">Left: $<span id="bot_balance" class="font-color--white">0.00</span></div>
+			<div class="balance_text">
+				<div class="balance_style left0">Left: $<span id="bot_balance" >0.00</span></div>
 			</div>
 		</div>
 
-		<div class="col-md-12 no-padding text-center" style="width:100%; height:20%; position:absolute; top:75%">
-                        <p class="btn button button--blue margin-bot--10px"  style="width:10%" id="trade-btn" onclick="Confirmation()">
+		<div class="trade_button">
+                        <p id="trade-btn" onclick="Confirmation()">
 						Trade
 						</p>
                         <br>
-                        <button class="btn button button--transparent" style="width:10%">Auto Select</button>
+                        <button >Auto Select</button>
         </div>
 	</div>
-	
+<!-- Trade area -->	
+
+<!-- Add item area -->		
 <div id="add_item_section" >
+
+	<!-- Left side -->
 	<div class="add_item_left">
-		<ul class="nav nav-tabs inventory-area__tab-list" role="tablist">
-			<li class="nav-item inventory-area__tab-control">
-				<a class="nav-link active inventory-area__tab-link" id="your-csgo-tab" data-toggle="tab" href="#your-csgo" role="tab" aria-controls="csgo" aria-selected="true">
-					<img class="inventory-area__tab-image" src="assets/images/csgo_active.png">
+		<div class="top_nav" role="tablist">
+			<div class="img_pane">
+				<a>
+					<img class="image user_csgo tab_img_user" src="../../assets/images/csgo_active.png">
 				</a>
-			</li>
-			<li class="nav-item inventory-area__tab-control">
-				<a class="nav-link inventory-area__tab-link" id="your-dota-tab" data-toggle="tab" href="#your-dota" role="tab" aria-controls="dota" aria-selected="true">
-					<img class="inventory-area__tab-image" src="assets/images/dota_inactive.png">
+			</div >
+			<div class="img_pane">
+				<a>
+					<img class="image user_dota tab_img_user" src="../../assets/images/dota_inactive.png">
 				</a>
-			</li>
-		</ul>
+			</div>
+			<div class="border_round user_border">
+			
+			</div>
+		</div>
 
-		<div class="tab-content">
-			<div class=" active item_storage" id="your-csgo" role="tabpanel">
-
+		<div class="tab_content">
+			<div class=" active " id="your-csgo" role="tabpanel">
+				<div id="item_0" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													
+					<div class="item_frame_quantity">1</div>													
+					<div class="item_frame_rarity">common</div>													
+					<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													
+					<div class="item_frame_price">0.03</div>													
+					<div class="item_frame_dropdown" style="display: none;">													
+					<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													
+					<p>Item information 2</p>													
+					<p>Item information 3</p>													
+					</div>												
+				</div>
+				<div id="item_1" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">0.3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_2" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_3" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_4" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">0.03</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_5" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">1534.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_6" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3005.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+			
 			</div>
 			<div class="" id="your-dota" role="tabpanel">
-				
+				<div id="item_7" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_8" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_9" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">0.03</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_10" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">1534.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_11" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3005.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+			
 			</div>
 		</div>
 	</div>
+	<!-- Left side -->
 	
+	<!-- Middle area(filter) -->
 	<div class="add_item_filter">
-		<input type="text" id="SearchInput" placeholder="Search for names..">
+		<input type="text" id="SearchInput" placeholder="Type in to search..">
 		
+		<input type="range" id="my_slider" min="0.01" max="10000" value="50" class="slider">
 		<div class="radio_filter">
 			<p class="Radio_KeyWord">shotgun</p>
 			<div class="radio">
@@ -143,33 +206,63 @@
 		</div>
 		
 	</div>
+	<!-- Middle area(filter) -->
 	
-	
-	
+	<!-- Right side -->
 	<div class="add_item_right">
-		<ul class="nav nav-tabs inventory-area__tab-list" role="tablist">
-			<li class="nav-item inventory-area__tab-control">
-				<a class="nav-link active inventory-area__tab-link" id="bot-csgo-tab" data-toggle="tab" href="#bot-csgo" role="tab" aria-controls="csgo" aria-selected="true">
-					<img class="inventory-area__tab-image" src="assets/images/csgo_active.png">
+		<div class="top_nav" role="tablist">
+			<div class="img_pane">
+				<a>
+					<img class="image bot_csgo tab_img_bot" src="../../assets/images/csgo_active.png">
 				</a>
-			</li>
-			<li class="nav-item inventory-area__tab-control">
-				<a class="nav-link inventory-area__tab-link" id="bot-dota-tab" data-toggle="tab" href="#bot-dota" role="tab" aria-controls="dota" aria-selected="true">
-					<img class="inventory-area__tab-image" src="assets/images/dota_inactive.png">
-				</a>
-			</li>
-		</ul>
-
-		<div class="tab-content" id="bot_area" bot=1 steamid="76561198366407443" >
-			<div class="tab-pane active item_storage" id="bot-csgo" role="tabpanel" >
-
 			</div>
-			<div class="tab-pane" id="bot-dota" role="tabpanel">
+			<div class="img_pane">
+				<a>
+					<img class="image bot_dota tab_img_bot" src="../../assets/images/dota_inactive.png">
+				</a>
+			</div>
+			<div class="border_round bot_border">
+			
+			</div>
+		</div>
+
 		
+		<div class="tab_content" id="bot_area" bot=1 steamid="76561198366407443" >
+			<div class="active " id="bot-csgo" role="tabpanel" >
+				<div id="item_0" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													
+					<div class="item_frame_quantity">1</div>													
+					<div class="item_frame_rarity">common</div>													
+					<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													
+					<div class="item_frame_price">0.03</div>													
+					<div class="item_frame_dropdown" style="display: none;">													
+					<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													
+					<p>Item information 2</p>													
+					<p>Item information 3</p>													
+					</div>												
+				</div>
+				<div id="item_1" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">538</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_2" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">6034</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_3" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_4" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">157</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_5" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">1534.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_6" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">3005.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+			</div>
+			<div class="" id="bot-dota" role="tabpanel">
+				<div id="item_7" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">1.9</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_8" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">116</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_9" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">115.5</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_10" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">7.6</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_11" tag_container="Shotgun,Sawed-Off,The Bank Collection,Normal,Consumer Grade,Field-Tested" class="item_frame" assetid="12205206582" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3eSR96NimlZS0mvLwOq7c2D1TusEk07CVpo2kjlW2-xJrMD_yJdWWdwNvZwnT_1a2w-u9gJLuuszXiSw0vaL8BS0">													<div class="item_frame_price">33</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Sawed-Off | Forest DDPAT (Field-Tested)</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
+				<div id="item_12" tag_container="Container,The Chroma 2 Collection,Normal,Base Grade" class="item_frame" assetid="9369169475" appid="730" onclick="AddItems($(this),$('#trade_area_bot'))" onmouseover="dropdown_open($(this))" onmouseout="dropdown_close($(this))">													<div class="item_frame_quantity">1</div>													<div class="item_frame_rarity">common</div>													<img class="item_frame_image" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFAuhqSaKWtEu43mxtbbk6b1a77Twm4Iu8Yl3bCU9Imii1Xt80M5MmD7JZjVLFH-6VnQJQ">													<div class="item_frame_price">269.8</div>													<div class="item_frame_dropdown" style="display: none;">													<p>Chroma 2 Case</p>													<p>Item information 2</p>													<p>Item information 3</p>													</div>												</div>
 			</div>
 		</div>
 	</div>
+	<!-- Left side -->
+	
 </div>
+<!-- Add item area -->
+
+
 <script>
 
 function Confirmation() {
@@ -181,7 +274,7 @@ function closeModal(){
 }
 </script>
 <!--jQuery-->
-<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="../../assets/js/jquery-3.2.1.min.js"></script>
 <!--Bootstrap JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
         integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
@@ -189,7 +282,7 @@ function closeModal(){
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/slideshow-container.js"></script>
+<script src="../../assets/js/main.js"></script>
+<script src="../../assets/js/slideshow-container.js"></script>
 </body>
 </html>
