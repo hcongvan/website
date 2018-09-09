@@ -94,10 +94,10 @@ $(document).ready(function () {
 	);
 	
 	
-	$("div.item_frame").hover(function(){
+	/* $("div.item_frame").hover(function(){
 		alert(1);
 		}
-	);
+	); */
 	
 	$(".item_frame").mouseleave(function(){
 		var target = $(this).children(".item_frame_dropdown");
@@ -105,7 +105,61 @@ $(document).ready(function () {
 		}
 	);
 	
+	$(".tab_img_user").click(function(){
+		var img_link = $(this).attr("src");
+		if (img_link == "../../assets/images/csgo_inactive.png")
+		{
+			$(this).attr("src","../../assets/images/csgo_active.png");
+			$(".user_dota").attr("src","../../assets/images/dota_inactive.png");
+			$(".user_border").animate({left:'0%'}, "slow", function(){
+			$(".user_border").css("border","5px solid #50BFE6");
+			$(".user_border").css("box-shadow","0 0 20px blue");
+			/* $(".add_item_left").css("background-image", "linear-gradient(to bottom right, #FFFF66, #FF9933)"); */
+			});
+			console.log(1);
+		}
+		else if (img_link == "../../assets/images/dota_inactive.png")
+		{
+			$(this).attr("src","../../assets/images/dota_active.png");
+			$(".user_csgo").attr("src","../../assets/images/csgo_inactive.png");
+			$(".user_border").animate({left:'50%'}, "slow", function(){
+			$(".user_border").css("border","5px solid #FF9933");
+			$(".user_border").css("box-shadow","0 0 20px red");
+			/* $(".add_item_left").css("background-image", "linear-gradient(to bottom right, #AAF0D1, #50BFE6)"); */
+			});
+			
+
+			console.log(2);
+		}
+		$("#your-csgo").slideToggle("slow");
+		$("#your-dota").slideToggle("slow");
+	});
 	
+	$(".tab_img_bot").click(function(){
+		var img_link = $(this).attr("src");
+		if (img_link == "../../assets/images/csgo_inactive.png")
+		{
+			$(this).attr("src","../../assets/images/csgo_active.png");
+			$(".bot_dota").attr("src","../../assets/images/dota_inactive.png");
+			$(".bot_border").animate({left:'0%'}, "slow", function(){
+			$(".bot_border").css("border","5px solid #50BFE6");
+			$(".bot_border").css("box-shadow","0 0 20px blue");
+			/* $(".add_item_right").css("background-image", "linear-gradient(to bottom right, #FFFF66, #FF9933)"); */
+			});
+		}
+		else if (img_link == "../../assets/images/dota_inactive.png")
+		{
+			$(this).attr("src","../../assets/images/dota_active.png");
+			$(".bot_csgo").attr("src","../../assets/images/csgo_inactive.png");
+			$(".bot_border").animate({left:'50%'}, "slow", function(){
+			$(".bot_border").css("border","5px solid #FF9933");
+			$(".bot_border").css("box-shadow","0 0 20px red");
+			/* $(".add_item_right").css("background-image", "linear-gradient(to bottom right, #AAF0D1, #50BFE6)"); */
+			});
+		}
+		$("#bot-csgo").slideToggle("slow");
+		$("#bot-dota").slideToggle("slow");
+	});
 /* 	$("#trade-btn").click(function(){
 		alert("1");
 		$.get("checkStatus",function(data,status){
@@ -132,8 +186,31 @@ $(document).ready(function () {
 			button.animate({left: '2px'},500);
 			$(this).find(".radio").css("background","LightGrey");
 			button.css("background","grey");
-			$("div.tab-content#bot_area .active .item_frame").css("display","block");
+			$("div.tab_content#bot_area .active .item_frame").css("display","block");
 			Filter_start(document.getElementById("SearchInput").value)	;
+		}
+	});
+	
+	$(".slider").mouseup(function(){
+		var AllItem;
+		var ItemSelect;
+		var ItemPrice;
+		var cur_val = document.getElementById("my_slider").value;
+		console.log(cur_val)
+		AllItem = $("div.tab_content#bot_area .active .item_frame");	
+		for(var i = 0; i < AllItem.length ; i++)
+		{
+			ItemSelect = "div.tab_content#bot_area .active #item_" + i;
+			ItemPrice = Number($(ItemSelect).find(".item_frame_price").text());
+			console.log(ItemPrice);
+			if(ItemPrice < cur_val)
+			{
+				$(ItemSelect).css("display","none");
+			}
+			else 
+			{
+				$(ItemSelect).css("display","block");
+			}
 		}
 	});
 });
@@ -145,15 +222,15 @@ function Filter_start(KeyWord){
 		var Item;
 		KeyWord = KeyWord.toUpperCase();
 		console.log(KeyWord);
-		ItemCS = $("div.tab-content#bot_area .active .item_frame");	
+		ItemCS = $("div.tab_content#bot_area .item_frame");	
 		if(KeyWord != "")
 		{
 			for(var i = 0; i < ItemCS.length; i++)
 			{
-				ItemSelect = "div.tab-content#bot_area .active #item_" + i;
+				ItemSelect = "div.tab_content#bot_area .active #item_" + i;
 				
-				if($(ItemSelect).css("display") == "block")
-				{
+				/* if($(ItemSelect).css("display") == "block")
+				{ */
 					Item = $(ItemSelect).attr("tag_container");
 					Item = Item.split(',');
 					for( var j =0; j < Item.length; j++)
@@ -166,7 +243,7 @@ function Filter_start(KeyWord){
 						else
 							$(ItemSelect).css("display","none");
 					}
-				}
+				/* } */
 			}
 		}
 		
@@ -265,5 +342,22 @@ function AddItems(item_id, previous){
 	bot_val_dis = bot_val.toFixed(2);
 	document.getElementById("user_balance").innerHTML=user_val_dis;
 	document.getElementById("bot_balance").innerHTML=bot_val_dis;
-	previous.prepend(item_id);
+	previous.append(item_id);
+	if($('#trade_area_bot').find(".item_frame").length >14)
+	{
+		$('#trade_area_bot').css("overflow-y","scroll");
+	}
+	else
+	{
+		$('#trade_area_bot').css("overflow-y","visible");
+	}
+	
+	if($('#trade_area_user').find(".item_frame").length >14)
+	{
+		$('#trade_area_user').css("overflow-y","scroll");
+	}
+	else
+	{
+		$('#trade_area_user').css("overflow-y","visible");
+	}
 }
