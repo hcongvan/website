@@ -1,6 +1,6 @@
 var config = {
-	URL : process.env.IP||'http://172.16.2.32',
-	HOST: process.env.IP||'172.16.2.32',//'localhost',
+	URL : process.env.IP||'',
+	HOST: process.env.IP||'',//'localhost',
 	PORT: process.env.PORT||3000,
 	DB:{
 		USER:'hocong',
