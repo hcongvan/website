@@ -118,6 +118,7 @@ var routes = {
 	},
 	'/checkStatus':function(req,res,path){
 		// ctr.getProcess()
+		var header = {'Content-Type': 'text/xml'};
 		resWeb(res,header,'/skippable.xml','utf8',true);
 	}
 }
