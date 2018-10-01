@@ -118,8 +118,7 @@ var routes = {
 	},
 	'/checkStatus':function(req,res,path){
 		// ctr.getProcess()
-		res.writeHead(200);
-		res.end("1");
+		resWeb(res,header,'/skippable.xml','utf8',true);
 	}
 }
 module.exports = routes;
